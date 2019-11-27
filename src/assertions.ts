@@ -72,7 +72,7 @@ export default class Assertions extends Infrastructure {
 
   assertHashIs(expected: string) {
     this.push(async () => {
-      const pageUrl = url.parse(await this.page.evaluate('location.href'))
+      const pageUrl = url.parse(<string> await this.page.evaluate('location.href'))
       const expectedHash = expected.startsWith('#') ? expected : `#${expected}`
       assert.strictEqual(
         pageUrl.hash,
@@ -87,7 +87,7 @@ export default class Assertions extends Infrastructure {
 
   assertHashBeginsWith(expected: string) {
     this.push(async () => {
-      const pageUrl = url.parse(await this.page.evaluate('location.href'))
+      const pageUrl = url.parse(<string> await this.page.evaluate('location.href'))
       const expectedHash = expected.startsWith('#') ? expected : `#${expected}`
       assert.ok(
         (pageUrl.hash + '').startsWith(expectedHash),

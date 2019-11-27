@@ -1,6 +1,6 @@
 import url from 'url'
 import crypto from 'crypto'
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-core'
 import Infrastructure from './infrastructure'
 import { prepareStackTrace } from './utils/error'
 

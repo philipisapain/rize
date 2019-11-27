@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-core'
 import Infrastructure from './infrastructure'
 import { prepareStackTrace } from './utils/error'
 
@@ -137,7 +137,7 @@ export default class Page extends Infrastructure {
 
     return new Promise<Ret>(resolve => {
       this.push(async () => {
-        const returnValue: Ret = await this.page.evaluate(stringified)
+        const returnValue: Ret = <Ret> await this.page.evaluate(stringified)
         resolve(returnValue)
       })
     })

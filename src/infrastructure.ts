@@ -1,5 +1,5 @@
 import EventEmitter from 'events'
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-core'
 import { beautifyStack } from './utils/error'
 
 export default class Infrastructure {
